@@ -100,7 +100,14 @@ docker container run --rm -it \
 This runs the upgrade command in interactive mode, so that you are prompted
 for any necessary configuration values.
 
-Once the upgrade finishes, navigate to the UCP web UI and make sure that
+Once the upgrade finishes, verify the `ucp-interlock-proxy` container is running on the latest image:
+```
+docker service ls
+```
+Disable and [enable Layer 7 Routing](https://docs.docker.com/ee/ucp/interlock/deploy/) on UCP UI should force 
+`ucp-interlock-proxy`to run of a new image.
+
+Finally, navigate to the UCP web UI and make sure that
 all the nodes managed by UCP are healthy.
 
 ## Where to go next
