@@ -43,6 +43,9 @@ UCP and apply your configuration changes:
 curl --cacert ca.pem --cert cert.pem --key key.pem --upload-file ucp-config.toml https://UCP_HOST/api/ucp/config-toml
 ```
 
+In case if the above steps resulted in a following error "_HTTP Authorization Token or TLS Client Certificate Required_", please run this step first:
+In UCP UI, go to `UCP API Documentation` section and select `/auth/login` API first to get a token and then add the Header -H “Authorization: Bearer <token>”. 
+
 ## Apply an existing configuration file at install time
 You can configure UCP to import an existing configuration file at install time. To do this using the **Configs** feature of Docker Swarm, follow these steps.
 
